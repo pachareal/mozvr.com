@@ -1,0 +1,340 @@
+/*
+colors:
+darkblue: #1f366c
+cobalt: #292c38
+salmon: #e14164
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: #fff;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font: 300 1rem/1.5 "Fira Sans", sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 200;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.wordmark {
+  background: #ffcd02;
+  box-shadow: -3px 3px 0 0 rgba(0,0,0,.15);
+  color: #333;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: 200;
+  letter-spacing: .015em;
+  padding: 1rem;
+}
+
+h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: rgb(53,196,232);
+  text-decoration: none;
+  transition: 0.1s ease-in-out;
+}
+
+a:hover {
+  color: #fff;
+}
+
+.c:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+.hidden-text {
+  display: block;
+  text-indent: -9999px;
+}
+
+
+/* flex styles */
+.flex {
+  display: flex;
+}
+
+.flex--center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.flex--item--half {
+  max-width: 50%;
+}
+
+.flex--grid {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.display-none {
+  display: none;
+}
+
+.fill {
+  background: red;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.full-width {
+  height: 100%;
+  width: 100%;
+}
+
+/* content styles */
+.section {
+  padding: 1rem;
+}
+
+.section__wrap {
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 1rem;
+}
+
+.showcase__grid {
+  margin-left: -1rem;
+  margin-right: -1rem;
+  /*max-width: 100%;*/
+}
+
+.section h1 {
+  color: #333;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+/*
+Top intro section
+*/
+.header {
+  color: #fff;
+  position: relative;
+}
+
+.hero {
+  border: 0;
+  background: #000 url(../img/sechelt-night-masthead.jpg) 50% 40% repeat-x;
+  background-size: cover;
+  height: calc(200px + 20vw);
+}
+
+.pull {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+
+.pull:after {
+  content: ' ';
+  width: 50px;
+  height: 50px;
+  left: -25px;
+  bottom: 0px;
+  background: rgb(239,45,94);
+  position: absolute;
+}
+
+.novr #vrnotfound,
+.novr #start {
+  display: block;
+}
+
+.vr #vrfound {
+  display: block;
+}
+
+/*
+Getting Started
+*/
+
+
+/*
+Showcase
+*/
+
+.showcase__item {
+  flex: 0 1 33.3333%;
+}
+
+.showcase__link {
+  border-radius: .5rem;
+  color: #369;
+  display: block;
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.showcase__link:hover {
+  background: #efefef;
+  color: #036;
+}
+
+.showcase__link:active {
+  background: #eee;
+  opacity: 0.7;
+}
+
+.showcase__title {
+  font-weight: 400;
+  margin-top: 1rem;
+}
+
+.showcase__image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: .5rem;
+  display: block;
+  height: 13rem;
+  width: 100%;
+}
+
+.lacks-touch .showcase__image {
+  opacity: 0.85;
+}
+
+.lacks-touch .showcase__image:hover {
+  opacity: 1;
+}
+
+.showcase__author {
+  color: #aaa;
+}
+
+.showcase__author__name {
+  color: #666;
+}
+
+.showcase__enter-vr {
+  background: url(../img/icon-goggles-black.svg) no-repeat;
+  background-size: auto 20px;
+  height: 20px;
+  bottom: 2.5rem;
+  position: absolute;
+  right: 1rem;
+}
+
+.section--start {
+  background: rgb(239,45,94);
+  color: #fff;
+}
+
+.copy--center {
+  text-align: center;
+}
+
+.copy--bright {
+  color: #fff;
+}
+
+.copy--bright h1 {
+  color: rgba(255,255,255,.5);
+}
+
+.section--footer {
+  background: #1f366c;
+  color: #0c99d5;
+}
+
+.section--footer a {
+  color: #fff;
+}
+
+.footer__icons {
+  margin: 0 auto;
+  max-width: 100px;
+}
+
+.icon--social {
+  height: 30px;
+}
+
+.social__link--github {
+  float: left;
+}
+
+.social__link--twitter {
+  float: right;
+}
+
+.link--borderless {
+  border: 0;
+}
+
+a.link--legal {
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.25);
+  color: #ccc;
+  padding-bottom: 1px;
+  line-height: 2;
+}
+
+.link--legal:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.8);
+  color: #eee;
+}
+
+.copy--big {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+
+/*
+media queries
+*/
+
+@media (max-width: 899px) {
+  .showcase__item {
+    flex-basis: 50%;
+  }
+
+  .hero {
+    background: #000 url(../img/sechelt-masthead.png) 60% 0% no-repeat;
+    background-size: fill;
+  }
+}
+
+@media (max-width: 599px) {
+  .showcase__item {
+    flex-basis: 100%;
+  }
+}

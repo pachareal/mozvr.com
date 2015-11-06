@@ -1,8 +1,6 @@
-# aframe.io
+# mozvr-site-mobile
 
-Local Path | Local URL  | External URL | Description
----------- | ---------- | ------------ | -----------
-[`./public/index.html`](https://github.com/mozvr/aframe-site/blob/master/public/index.html) | [http://localhost:3000/](http://localhost:3000/) | https://aframe.io/ | A-Frame Library Main Site
+mozvr.com mobile site
 
 
 ## Installation
@@ -20,27 +18,19 @@ To serve the site from the simple server:
 
 Then launch the site from your favourite browser:
 
-[__http://localhost:3000/__](http://localhost:3000/)
+[__http://localhost:8080/__](http://localhost:8080/)
 
 If you wish to serve the site from a different port:
 
-    AFRAME_PORT=8000 npm run dev
-
-### Advanced
-
-To run the server on a different port, set the `AFRAME_HOST` and `AFRAME_PORT` environment variables.
+    PORT=8000 npm run dev
 
 
 ## Deployment
 
-In production, the server is run like so:
+To deploy the site to GitHub Pages:
 
-    NODE_ENVIRONMENT=production node index.js
+    npm run ghpages
 
-Alternatively:
+To deploy the site to __your__ GitHub Pages:
 
-    npm run prod
-
-To run the server à la Heroku:
-
-    foreman start web
+    npm run ghpages cvan
