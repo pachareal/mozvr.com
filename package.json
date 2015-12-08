@@ -1,18 +1,18 @@
 {
-  "name": "aframe-site",
+  "name": "mozvr.com",
   "private": true,
   "version": "0.0.0",
   "description": "A-Frame",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MozVR/aframe-site.git"
+    "url": "git+https://github.com/MozVR/mozvr.com.git"
   },
   "author": "MozVR",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MozVR/aframe-site/issues"
+    "url": "https://github.com/MozVR/mozvr.com/issues"
   },
-  "homepage": "http://aframe.io/",
+  "homepage": "http://mozvr.com/",
   "devDependencies": {
     "autoprefixer": "^6.0.3",
     "gh-pages": "^0.4.0",
