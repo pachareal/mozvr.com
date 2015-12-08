@@ -1,29 +1,32 @@
 {
   "name": "aframe-site",
   "private": true,
-  "description": "A-Frame: Building Blocks for the Web",
-  "license": "MIT",
+  "version": "0.0.0",
+  "description": "A-Frame",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mozvr/aframe-site.git"
+    "url": "git+https://github.com/MozVR/aframe-site.git"
+  },
+  "author": "MozVR",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MozVR/aframe-site/issues"
+  },
+  "homepage": "http://aframe.io/",
+  "devDependencies": {
+    "autoprefixer": "^6.0.3",
+    "gh-pages": "^0.4.0",
+    "http-server": "^0.8.5",
+    "postcss-cli": "^2.3.2"
   },
   "scripts": {
-    "start": "NODE_ENVIRONMENT=production node index.js",
-    "dev": "NODE_ENVIRONMENT=dev nodemon index.js",
-    "prod": "NODE_ENVIRONMENT=production node index.js",
-    "gzip": "find public -name '*.css' -o -name '*.eot' -o -name '*.html' -o -name '*.js' -o -name '*.json' -o -name 'html' -o -name '*.js' -o -name '*.json' -o -name '*.svg' -o -name '*.ttf' -o -name '*.webapp' -o -name '*.woff' | xargs gzip --k -9 -f",
-    "minify": "npm run minify-js && npm run minify-css",
-    "minify-css": "crass public/css/style.css > public/css/style.min.css && rm public/css/style.css && mv public/css/style.min.css public/css/style.css",
-    "minify-js": "uglifyjs public/js/main.js > public/js/main.min.js && rm public/js/main.js && mv public/js/main.min.js public/js/main.js"
-  },
-  "main": "./index",
-  "version": "0.0.1",
-  "dependencies": {
-    "crass": "^0.7.4",
-    "node-static": "^0.7.6",
-    "uglify-js": "^2.4.16"
-  },
-  "devDependencies": {
-    "nodemon": "^1.3.7"
+    "start": "npm run dev",
+    "dev": "http-server -c-1",
+    "build": "mkdir -p _build/assets/css/ && postcss --use autoprefixer assets/css/style.css -d _build/assets/css/ --browsers 'last 10 versions' --map --no-cascade",
+    "prod": "npm run build && rm -rf _prod && mkdir -p _prod && cp -r {.nojekyll,CNAME,assets,*.html,showcase} _prod/. 2>/dev/null || : && cp -r _build/* _prod/.",
+    "preghpages": "npm run prod",
+    "ghpages": "node ./scripts/gh-pages",
+    "gh-pages": "npm run ghpages",
+    "publish": "npm run ghpages"
   }
 }
