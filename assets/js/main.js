@@ -1,5 +1,3 @@
-(function () {
-
 function toArray (obj) {
   return Array.prototype.slice.apply(obj);
 }
@@ -31,6 +29,50 @@ document.body.className += 'ontouchstart' in window ? ' has-touch' : ' lacks-tou
 // And a class for WebVR support.
 document.body.className += 'getVRDevices' in navigator ? ' vr' : ' novr';
 
+// menu tabs
+function Tabs() {
+  var menuTabs = document.body.querySelectorAll('.menu--tabs');
+  this.activeSection = null;
+  this.activeTab = null;
+
+  for (var i = 0; i < menuTabs.length; i++) {
+    var menuTab = menuTabs[i];
+    var tabs = Array.from(menuTab.querySelectorAll('li'));
+
+    tabs.forEach(function(tab) {
+      var link = tab.querySelector('a[href]');
+
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var id = link.getAttribute('href');
+        var section = document.querySelector(id);
+        if (!section) { return; }
+        if (this.activeSection && this.activeTab) {
+          this.activeSection.style.display = 'none';
+          this.activeSection = null;
+          this.activeTab.classList.remove('active');
+          this.activeTab = null;
+        }
+        this.activeTab = tab;
+        this.activeTab.classList.add('active');
+        section.style.display = 'block';
+        this.activeSection = section;
+      }.bind(this))
+
+      if (tab.dataset.menuDefault !== undefined) {
+        link.dispatchEvent(new MouseEvent('click', {
+          'view': window,
+          'bubbles': true,
+          'cancelable': true
+        }));
+      }
+    })
+
+  }
+}
+
+Tabs();
+
 function initGoogleAnalytics (id) {
   (function(c, v, a, n) {
     c.GoogleAnalyticsObject = n;
@@ -51,5 +93,3 @@ function initGoogleAnalytics (id) {
 }
 
 initGoogleAnalytics('UA-24056643-3');
-
-})();

@@ -12,10 +12,25 @@
     <link rel="shortcut icon" href="https://mozorg.cdn.mozilla.net/media/img/favicon.ico">
   </head>
   <body>
+    <nav>
+      <ul class="menu">
+        <li><a href="#top">[MOZVR]</a></li>
+        <li><a href="#start">Getting Started</a></li>
+        <li><a href="#showcase">Showcase</a></li>
+        <li><a href="#developers">Developers</a></li>
+        <li><a href="#community">Community</a></li>
+      </ul>
+      <ul class="social">
+        <li>Github</li>
+        <li>Twitter</li>
+      </ul>
+    </nav>
     <header id="header" class="header">
       <div id="hero" class="hero flex flex--center">
-        <div class="flex--item--half copy--center">
+        <div class="copy--center">
           <h1 class="wordmark">MOZVR</h1>
+
+          <h2 class="headline">We are the Mozilla VR team. Our goal is to help bring high performance virtual reality to the open web.</h2>
         </div>
 
         <!-- <h3 id="vrfound" class="display-none"><img width="40" src="assets/img/icon-goggles-white.svg" alt="VR"></h3>
@@ -25,10 +40,44 @@
       </div>
     </header>
 
-    <section id="start" class="section section--start copy copy--bright">
+    <section id="start" class="section section--start copy">
       <div class="section__wrap">
         <h1>Getting Started</h1>
-        <p class="copy--big">Click on any of the showcase items below to get started</p>
+
+        <menu class="copy--bright c menu--tabs">
+          <ul>
+            <li data-menu-default><a href="#iphone">iPhone</a></li>
+            <li><a href="#android">Android</a></li>
+            <li><a href="#rift">Oculus Rift</a></li>
+            <li><a href="#other">Other</a></li>
+          </ul>
+        </menu>
+
+        <div id="iphone" class="menu--content">
+          <h2>To use your iPhone as a virtual reality device.</h2>
+
+          <div class="device-instructions">
+            <ul>
+              <ol>Load a WebVR scene in your favorite browser</ol>
+              <ol>Hold up your phone and move it around to "look"</ol>
+              <ol>Tap the <em>VR</em> button and drop it into a a Cardboard holder.<br/>
+              You've got WebVR on your iPhone!</ol>
+            </ul>
+          </div>
+        </div>
+
+        <div id="android" class="menu--content">
+          <h2>To use your Android phone as a virtual reality device.</h2>
+
+          <div class="device-instructions">
+            <ul>
+              <ol>Load a WebVR scene in your favorite browser</ol>
+              <ol>Hold up your phone and move it around to "look"</ol>
+              <ol>Tap the <em>VR</em> button and drop it into a a Cardboard holder.<br/>
+              You've got WebVR on your phone!</ol>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -102,6 +151,18 @@
             </a>
           </li>
         </ul>
+      </div>
+    </section>
+
+    <section id="developers" class="section">
+      <div class="section__wrap section--showcase__wrap">
+        <h1>Developers</h1>
+      </div>
+    </section>
+
+    <section id="community" class="section">
+      <div class="section__wrap section--showcase__wrap">
+        <h1>Community</h1>
       </div>
     </section>
 

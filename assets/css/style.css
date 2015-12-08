@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  font: 300 1rem/1.5 "Fira Sans", sans-serif;
+  font: 300 1.2rem/1.5 "Fira Sans", sans-serif;
 }
 
 h1, h2, h3, h4 {
@@ -29,22 +29,10 @@ h1, h2, h3, h4 {
 
 h1 {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.wordmark {
-  background: #ffcd02;
-  box-shadow: -3px 3px 0 0 rgba(0,0,0,.15);
-  color: #333;
-  font-size: 3rem;
-  font-style: italic;
-  font-weight: 200;
-  letter-spacing: .015em;
-  padding: 1rem;
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
 }
 
@@ -131,7 +119,6 @@ ul {
 .showcase__grid {
   margin-left: -1rem;
   margin-right: -1rem;
-  /*max-width: 100%;*/
 }
 
 .section h1 {
@@ -141,19 +128,71 @@ ul {
   text-transform: uppercase;
 }
 
+
+/*
+tabs
+*/
+.menu--content {
+  display: none;
+}
+
+
+/*
+Navigation
+*/
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 100;
+  text-transform: uppercase;
+}
+
+nav li, menu li {
+  padding: 0.5rem 1rem;
+}
+
+.menu li {
+  float: left;
+}
+
+.social li {
+  float: right;
+}
+
 /*
 Top intro section
 */
 .header {
-  color: #fff;
   position: relative;
 }
 
 .hero {
   border: 0;
-  background: #000 url(../img/sechelt-night-masthead.jpg) 50% 40% repeat-x;
+  background: #333;
+  color: #efefef;
   background-size: cover;
   height: calc(200px + 20vw);
+}
+
+.wordmark {
+  width:15rem;
+  color: #333;
+  background: #ffcd02;
+  box-shadow: -3px 3px 0 0 rgba(0,0,0,.15);
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: 200;
+  letter-spacing: .015em;
+  margin: auto;
+  padding: 1rem;
+}
+
+.headline {
+  max-width: 50rem;
+  margin: 3rem;
 }
 
 .pull {
@@ -185,6 +224,18 @@ Top intro section
 Getting Started
 */
 
+menu {
+  display: block;
+}
+
+menu li {
+  float: left;
+  background: #333;
+}
+
+menu li.active {
+  background: #efefef;
+}
 
 /*
 Showcase
@@ -254,8 +305,8 @@ Showcase
 }
 
 .section--start {
-  background: rgb(239,45,94);
-  color: #fff;
+  /*background: rgb(239,45,94);
+  color: #fff;*/
 }
 
 .copy--center {
@@ -264,10 +315,6 @@ Showcase
 
 .copy--bright {
   color: #fff;
-}
-
-.copy--bright h1 {
-  color: rgba(255,255,255,.5);
 }
 
 .section--footer {
@@ -325,11 +372,6 @@ media queries
 @media (max-width: 899px) {
   .showcase__item {
     flex-basis: 50%;
-  }
-
-  .hero {
-    background: #000 url(../img/sechelt-masthead.png) 60% 0% no-repeat;
-    background-size: fill;
   }
 }
 
