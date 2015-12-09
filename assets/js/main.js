@@ -35,6 +35,12 @@ function Tabs() {
   this.activeSection = null;
   this.activeTab = null;
 
+  // hide content panels
+  var menuContent = Array.from(document.body.querySelectorAll('.menu--content'));
+  menuContent.forEach(function(content) {
+    content.style.display = 'none';
+  })
+
   for (var i = 0; i < menuTabs.length; i++) {
     var menuTab = menuTabs[i];
     var tabs = Array.from(menuTab.querySelectorAll('li'));
@@ -67,7 +73,6 @@ function Tabs() {
         }));
       }
     })
-
   }
 }
 

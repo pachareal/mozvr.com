@@ -24,20 +24,25 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-weight: 200;
+  font-weight: 400;
 }
 
 h1 {
   font-size: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 
-p {
+h3 {
   margin-bottom: 1rem;
+}
+p {
+  margin-bottom: 1.5rem;
 }
 
 a {
@@ -56,8 +61,23 @@ a:hover {
   display: block;
 }
 
+ol li {
+  margin: 0 0 0.5rem 1.5rem;
+}
+
 ul {
   list-style: none;
+}
+
+.cols-1-3 {
+  width: 33%;
+  float: left;
+  padding: 0 1rem 0 0;
+}
+
+.cols-1-5  {
+  width: 20%;
+  float: left;
 }
 
 .hidden-text {
@@ -122,35 +142,63 @@ ul {
 }
 
 .section h1 {
+  text-align: center;
   color: #333;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
 }
 
 
 /*
-tabs
-*/
-.menu--content {
-  display: none;
-}
-
-
-/*
 Navigation
 */
+.nav--top {
+  display: block;
+  float: left;
+  font-size: 1.2rem;
+  font-style: italic;
+  background: orange;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  text-decoration: none;
+  background: #ffcd02;
+  padding: 0.5rem 1rem;
+  color: #333;
+}
+
+.nav--top:hover {
+  color: #333;
+}
+
 nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: white;
+  background: #efefef;
   z-index: 100;
   text-transform: uppercase;
+  text-align: center;
 }
 
-nav li, menu li {
+nav li {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+}
+
+nav .social {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+nav .social li {
+  padding: 0.5rem
+}
+
+menu li {
   padding: 0.5rem 1rem;
 }
 
@@ -225,16 +273,26 @@ Getting Started
 */
 
 menu {
-  display: block;
+  text-align: center;
 }
 
 menu li {
-  float: left;
+  display: inline-block;
   background: #333;
+  margin: 0;
 }
 
 menu li.active {
   background: #efefef;
+}
+
+.menu--top {
+  background: orange;
+}
+
+.menu--content {
+  width: 75%;
+  margin: 1.5rem auto;
 }
 
 /*
@@ -246,11 +304,10 @@ Showcase
 }
 
 .showcase__link {
-  border-radius: .5rem;
   color: #369;
   display: block;
-  padding: 1rem;
   position: relative;
+  margin: 0.25em;
   width: 100%;
 }
 
@@ -273,7 +330,6 @@ Showcase
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: .5rem;
   display: block;
   height: 13rem;
   width: 100%;
@@ -304,11 +360,6 @@ Showcase
   right: 1rem;
 }
 
-.section--start {
-  /*background: rgb(239,45,94);
-  color: #fff;*/
-}
-
 .copy--center {
   text-align: center;
 }
@@ -331,8 +382,13 @@ Showcase
   max-width: 100px;
 }
 
+.footer__legal {
+  max-width: 50rem;
+  margin: auto;
+}
+
 .icon--social {
-  height: 30px;
+  height: 22px;
 }
 
 .social__link--github {
@@ -373,10 +429,16 @@ media queries
   .showcase__item {
     flex-basis: 50%;
   }
+  .cols-1-3 {
+    width: 50%;
+  }
 }
 
 @media (max-width: 599px) {
   .showcase__item {
     flex-basis: 100%;
+  }
+  .cols-1-3 {
+    width: 100%;
   }
 }
