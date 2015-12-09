@@ -27,7 +27,8 @@ resizeHandler();
 document.body.className += 'ontouchstart' in window ? ' has-touch' : ' lacks-touch';
 
 // And a class for WebVR support.
-document.body.className += 'getVRDevices' in navigator ? ' vr' : ' novr';
+var isVr = 'getVRDevices' in navigator;
+document.body.className += isVr ? ' vr' : ' novr';
 
 // menu tabs
 function Tabs() {
@@ -64,19 +65,27 @@ function Tabs() {
         section.style.display = 'block';
         this.activeSection = section;
       }.bind(this))
-
-      if (tab.dataset.menuDefault !== undefined) {
-        link.dispatchEvent(new MouseEvent('click', {
-          'view': window,
-          'bubbles': true,
-          'cancelable': true
-        }));
-      }
     })
   }
 }
 
 Tabs();
+
+// select tab based on mobile or desktop visitor.
+var clickEl = null;
+if (isMobile()) {
+  clickEl = document.querySelector('a[href="#mobile"]');
+} else {
+  clickEl = document.querySelector('a[href="#rift"]');
+}
+
+clickEl.dispatchEvent(new MouseEvent('click', {
+  'view': window,
+  'bubbles': true,
+  'cancelable': true
+}));
+
+
 
 // ismobile
 function isMobile() {

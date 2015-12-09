@@ -105,6 +105,14 @@ li {
   float: left;
 }
 
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
 /* flex styles */
 .flex {
   display: flex;
@@ -146,6 +154,11 @@ li {
   top: 0;
   right: 0;
   bottom: 0;
+}
+
+.width-75 {
+  width: 75%;
+  margin: 2rem auto;
 }
 
 .full-width {
@@ -267,7 +280,6 @@ nav {
 
 .nav-social--item {
   padding: 0.5rem;
-  float: right;
 }
 
 
@@ -349,7 +361,6 @@ menu .active a {
 }
 
 .menu--content {
-  width: 75%;
   margin: 1.5rem auto;
 }
 
@@ -501,14 +512,6 @@ footer
   height: 17px;
 }
 
-.social__link--github {
-  float: left;
-}
-
-.social__link--twitter {
-  float: right;
-}
-
 .link--borderless {
   border: 0;
 }
@@ -518,6 +521,7 @@ a.link--legal {
   color: #ccc;
   padding-bottom: 1px;
   line-height: 2;
+  white-space: nowrap;
 }
 
 .link--legal:hover {
@@ -543,6 +547,9 @@ media queries
   .cols-1-5 {
     width: 33%;
   }
+  .width-75 {
+    width: 100%;
+  }
 }
 
 @media (max-width: 599px) {
@@ -561,5 +568,8 @@ media queries
   }
   .cols-1-5 {
     width: 50%;
+  }
+  .width-75 {
+    width: 100%;
   }
 }
