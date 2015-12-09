@@ -1,5 +1,6 @@
 .DS_Store
-_build
-_prod
 node_modules
 npm-debug.log
+*.mp4
+*.orig
+*.webm
