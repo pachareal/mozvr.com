@@ -16,11 +16,12 @@ html, body {
 }
 
 html {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 body {
-  font: 300 1.2rem/1.5 "Fira Sans", sans-serif;
+  font: 300 1rem/1.2 "Fira Sans", sans-serif;
+  line-height: 1.5rem;
 }
 
 h1, h2, h3, h4 {
@@ -28,7 +29,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
@@ -47,21 +48,31 @@ p {
 }
 
 a {
-  color: rgb(53,196,232);
+  color: #0c99d5;
   text-decoration: none;
   transition: 0.1s ease-in-out;
 }
 
-a:hover {
-  color: #fff;
+a:hover:not(.no-decoration) {
+  text-decoration: underline;
 }
 
-ol li {
-  margin: 0 0 0.5rem 1.5rem;
+ul, ol {
+  margin: 0 0 1.5rem 0;
 }
 
 ul {
   list-style: none;
+}
+
+li {
+  margin: 0 0 0.5rem 0;
+  list-style-position: inside
+}
+
+.bullets {
+  list-style: disc;
+  list-style-position: inside;
 }
 
 .c:after {
@@ -73,6 +84,13 @@ ul {
 .hidden-text {
   display: block;
   text-indent: -9999px;
+}
+
+.highlight {
+  background-color: rgba(0, 0, 0, 0.04);
+  font-size: 85%;
+  border-radius: 3px;
+  padding: 0.2em;
 }
 
 .cols-1-3 {
@@ -90,6 +108,15 @@ ul {
 /* flex styles */
 .flex {
   display: flex;
+}
+
+.flex--vertical {
+  display: flex;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
 }
 
 .flex--center {
@@ -130,14 +157,29 @@ ul {
   text-align: center;
 }
 
+.copy--uppercase {
+  text-transform: uppercase;
+}
+
 .copy--bright {
   color: #fff;
 }
 
+.copy--big {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+.copy--med {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  color: #A3BAD5;
+}
 
 /* content styles */
 .section {
-  padding: 2rem 0 2rem 0;
+  padding: 1.5rem 0 1.5rem 0;
 }
 
 .section__wrap {
@@ -153,15 +195,22 @@ ul {
 
 .section h1 {
   text-align: center;
-  color: #0c99d5;
+  color: #1f366c;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
 }
 
-
 /*
 Navigation
 */
+.isMobile nav {
+  display: none;
+}
+
+nav ul, nav li {
+  margin: 0;
+}
+
 nav {
   position: fixed;
   top: 0;
@@ -177,7 +226,7 @@ nav {
 .nav--top {
   display: block;
   float: left;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-style: italic;
   background: orange;
   position: absolute;
@@ -248,29 +297,25 @@ Top intro section
   font-weight: 200;
   letter-spacing: .015em;
   margin: auto;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .headline {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #fff;
-  max-width: 45rem;
+  max-width: 35rem;
   margin: 3rem;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-.novr #vrnotfound,
-.novr #start {
-  display: block;
-}
-
-.vr #vrfound {
-  display: block;
-}
 
 /*
 Getting Started
 */
+.vr #start {
+  order: 2;
+}
+
 menu {
   text-align: center;
 }
@@ -286,7 +331,7 @@ menu a:hover {
 menu li {
   display: inline-block;
   margin: 0;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1.2rem;
   background: #efefef;
 }
 
@@ -311,14 +356,33 @@ menu .active a {
 /*
 Showcase
 */
+.isMobile .desktop {
+  display: none;
+}
 
 #showcase {
-  background: #292c38
+  order: 1;
+  background: #292c38;
 }
 
 #showcase h1 {
+  display: none;
+}
+
+.novr #showcase h1 {
+  display: block;
   color: #fff;
 }
+
+.novr .vrEnabled {
+  display: none;
+}
+
+
+.vr #showcase .vrEnabled {
+  display: block;
+}
+
 
 .showcase__item {
   flex: 0 1 33.3333%;
@@ -383,8 +447,12 @@ Showcase
 developers
  */
 
+#developers {
+  background: #efefef;
+}
+
 #developers h2 {
-  color: #0c99d5;
+  color: #1f366c;
 }
 
 /*
@@ -392,9 +460,21 @@ team
 */
 
 #team {
-  background: #efefef;
+  border-top: 1px solid #efefef;
 }
 
+#team h2 {
+  margin: 0 0 0.5rem 0;
+}
+
+.team--item {
+  margin: 0 0 2rem 0;
+  height: 5rem;
+}
+
+.team--title, .team--social {
+  color: #828282;
+}
 /*
 footer
 */
@@ -418,7 +498,7 @@ footer
 }
 
 .icon--social {
-  height: 22px;
+  height: 17px;
 }
 
 .social__link--github {
@@ -445,17 +525,15 @@ a.link--legal {
   color: #eee;
 }
 
-.copy--big {
-  font-size: 2rem;
-  line-height: 1.5;
-}
-
 
 /*
 media queries
 */
 
 @media (max-width: 899px) {
+  nav {
+    display: none;
+  }
   .showcase__item {
     flex-basis: 50%;
   }
@@ -468,6 +546,13 @@ media queries
 }
 
 @media (max-width: 599px) {
+  nav {
+    display: none;
+  }
+
+  .showcase__link {
+    margin: 0;
+  }
   .showcase__item {
     flex-basis: 100%;
   }
