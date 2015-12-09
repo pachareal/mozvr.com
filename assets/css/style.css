@@ -167,7 +167,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background: #efefef;
+  background: rgba(245, 245, 245, 0.9);
   z-index: 100;
   text-transform: uppercase;
   text-align: center;
@@ -188,6 +188,7 @@ nav {
   background: #ffcd02;
   padding: 0.5rem 1rem;
   color: #333;
+  border-right: 1px solid #D0D0D0;
 }
 
 .nav--top:hover {
@@ -255,7 +256,7 @@ Top intro section
   color: #fff;
   max-width: 45rem;
   margin: 3rem;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.5)
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .novr #vrnotfound,
@@ -336,6 +337,14 @@ Showcase
   background: #ffcd02;
 }
 
+.showcase__link:hover .showcase__title {
+  color: #333;
+}
+
+.showcase__link:hover .showcase__author {
+  color: #686868;
+}
+
 .showcase__link:active {
   background: #eee;
   opacity: 0.7;
@@ -369,18 +378,6 @@ Showcase
   margin: 0 0 0.6rem 0.5rem;
 }
 
-.showcase__author__name {
-  color: #A3BAD5;
-}
-
-.showcase__enter-vr {
-  background: url(../img/icon-goggles-black.svg) no-repeat;
-  background-size: auto 20px;
-  height: 20px;
-  bottom: 2.5rem;
-  position: absolute;
-  right: 1rem;
-}
 
 /*
 developers
