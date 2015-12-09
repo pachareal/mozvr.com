@@ -28,7 +28,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 1.5rem;
 }
 
@@ -41,6 +41,7 @@ h2 {
 h3 {
   margin-bottom: 1rem;
 }
+
 p {
   margin-bottom: 1.5rem;
 }
@@ -55,12 +56,6 @@ a:hover {
   color: #fff;
 }
 
-.c:after {
-  content: "";
-  clear: both;
-  display: block;
-}
-
 ol li {
   margin: 0 0 0.5rem 1.5rem;
 }
@@ -69,15 +64,10 @@ ul {
   list-style: none;
 }
 
-.cols-1-3 {
-  width: 33%;
-  float: left;
-  padding: 0 1rem 0 0;
-}
-
-.cols-1-5  {
-  width: 20%;
-  float: left;
+.c:after {
+  content: "";
+  clear: both;
+  display: block;
 }
 
 .hidden-text {
@@ -85,6 +75,17 @@ ul {
   text-indent: -9999px;
 }
 
+.cols-1-3 {
+  width: 33%;
+  float: left;
+  padding: 0 1rem 0 0;
+  height: 100%;
+}
+
+.cols-1-5  {
+  width: 20%;
+  float: left;
+}
 
 /* flex styles */
 .flex {
@@ -125,9 +126,18 @@ ul {
   width: 100%;
 }
 
+.copy--center {
+  text-align: center;
+}
+
+.copy--bright {
+  color: #fff;
+}
+
+
 /* content styles */
 .section {
-  padding: 1rem;
+  padding: 2rem 0 2rem 0;
 }
 
 .section__wrap {
@@ -143,8 +153,7 @@ ul {
 
 .section h1 {
   text-align: center;
-  color: #333;
-  font-size: 1.5rem;
+  color: #0c99d5;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
 }
@@ -153,6 +162,18 @@ ul {
 /*
 Navigation
 */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #efefef;
+  z-index: 100;
+  text-transform: uppercase;
+  text-align: center;
+  box-shadow: 0px 1px 0 0 rgba(0,0,0,.15);
+}
+
 .nav--top {
   display: block;
   float: left;
@@ -173,42 +194,32 @@ Navigation
   color: #333;
 }
 
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #efefef;
-  z-index: 100;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-nav li {
+.nav--item {
   display: inline-block;
   padding: 0.5rem 1rem;
+  transition: 0.1s ease-in-out;
 }
 
-nav .social {
+.nav--item a {
+  color: #333;
+  text-decoration: none;
+}
+
+.nav--item:hover {
+  background: #DCDCDC;
+}
+
+.nav-social {
   position: absolute;
   right: 0px;
   top: 0px;
 }
-nav .social li {
-  padding: 0.5rem
-}
 
-menu li {
-  padding: 0.5rem 1rem;
-}
-
-.menu li {
-  float: left;
-}
-
-.social li {
+.nav-social--item {
+  padding: 0.5rem;
   float: right;
 }
+
 
 /*
 Top intro section
@@ -221,8 +232,9 @@ Top intro section
   border: 0;
   background: #333;
   color: #efefef;
+  background-image: url('../img/sechelt-masthead.png');
   background-size: cover;
-  height: calc(200px + 20vw);
+  height: calc(200px + 40vw);
 }
 
 .wordmark {
@@ -239,24 +251,11 @@ Top intro section
 }
 
 .headline {
-  max-width: 50rem;
+  font-size: 1.5rem;
+  color: #fff;
+  max-width: 45rem;
   margin: 3rem;
-}
-
-.pull {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-}
-
-.pull:after {
-  content: ' ';
-  width: 50px;
-  height: 50px;
-  left: -25px;
-  bottom: 0px;
-  background: rgb(239,45,94);
-  position: absolute;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5)
 }
 
 .novr #vrnotfound,
@@ -271,23 +270,36 @@ Top intro section
 /*
 Getting Started
 */
-
 menu {
   text-align: center;
 }
 
-menu li {
-  display: inline-block;
-  background: #333;
-  margin: 0;
+menu a {
+  color: #333;
 }
 
-menu li.active {
+menu a:hover {
+  color: #333;
+}
+
+menu li {
+  display: inline-block;
+  margin: 0;
+  padding: 0.5rem 1.5rem;
   background: #efefef;
 }
 
-.menu--top {
-  background: orange;
+menu li:hover:not(.active) {
+  background: #DFDFDF;
+}
+
+menu .active {
+  color: #fff;
+  background: #0c99d5;
+}
+
+menu .active a {
+  color: #fff;
 }
 
 .menu--content {
@@ -298,6 +310,14 @@ menu li.active {
 /*
 Showcase
 */
+
+#showcase {
+  background: #292c38
+}
+
+#showcase h1 {
+  color: #fff;
+}
 
 .showcase__item {
   flex: 0 1 33.3333%;
@@ -312,8 +332,8 @@ Showcase
 }
 
 .showcase__link:hover {
-  background: #efefef;
   color: #036;
+  background: #ffcd02;
 }
 
 .showcase__link:active {
@@ -322,8 +342,9 @@ Showcase
 }
 
 .showcase__title {
+  color: #fff;
   font-weight: 400;
-  margin-top: 1rem;
+  margin: 0.5rem 0 0 0.5rem;
 }
 
 .showcase__image {
@@ -344,11 +365,12 @@ Showcase
 }
 
 .showcase__author {
-  color: #aaa;
+  color: #A3BAD5;
+  margin: 0 0 0.6rem 0.5rem;
 }
 
 .showcase__author__name {
-  color: #666;
+  color: #A3BAD5;
 }
 
 .showcase__enter-vr {
@@ -360,14 +382,25 @@ Showcase
   right: 1rem;
 }
 
-.copy--center {
-  text-align: center;
+/*
+developers
+ */
+
+#developers h2 {
+  color: #0c99d5;
 }
 
-.copy--bright {
-  color: #fff;
+/*
+team
+*/
+
+#team {
+  background: #efefef;
 }
 
+/*
+footer
+*/
 .section--footer {
   background: #1f366c;
   color: #0c99d5;
@@ -432,6 +465,9 @@ media queries
   .cols-1-3 {
     width: 50%;
   }
+  .cols-1-5 {
+    width: 33%;
+  }
 }
 
 @media (max-width: 599px) {
@@ -440,5 +476,8 @@ media queries
   }
   .cols-1-3 {
     width: 100%;
+  }
+  .cols-1-5 {
+    width: 50%;
   }
 }
