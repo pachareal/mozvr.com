@@ -297,6 +297,24 @@ Top intro section
   background-image: url('../img/sechelt-masthead.png');
   background-size: cover;
   height: calc(200px + 40vw);
+  position: relative;
+}
+
+.hero--iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.isMobile .hero--iframe {
+  display: none;
+}
+
+.hero--headline {
+  z-index: 100;
 }
 
 .wordmark {
