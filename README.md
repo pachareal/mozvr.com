@@ -1,6 +1,6 @@
-# mozvr-site-mobile
+# mozvr.com
 
-mozvr.com mobile site
+New http://mozvr.com/ site
 
 
 ## Installation
