@@ -5,6 +5,11 @@ New http://mozvr.com/ site
 
 ## Installation
 
+Clone the repo:
+
+    git clone --recursive git@github.com:MozVR/mozvr.com.git
+    cd mozvr.com
+
 To install the Node dependencies:
 
     npm install
@@ -23,6 +28,11 @@ Then launch the site from your favourite browser:
 If you wish to serve the site from a different port:
 
     PORT=8000 npm run dev
+
+To update the repo later:
+
+    git pull --rebase
+    git submodule update --init --recursive
 
 
 ## Deployment
