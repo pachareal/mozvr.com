@@ -1,6 +1,6 @@
-# mozvr-site-mobile
+# mozvr.com
 
-mozvr.com mobile site
+New http://mozvr.com/ site
 
 
 ## Installation
@@ -33,4 +33,4 @@ To deploy the site to GitHub Pages:
 
 To deploy the site to __your__ GitHub Pages:
 
-    npm run ghpages cvan
+    npm run ghpages your_username
