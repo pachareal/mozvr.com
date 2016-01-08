@@ -332,6 +332,13 @@ li {
 }
 
 /* content styles */
+.anchor {
+  position: relative;
+  visibility: hidden;
+  display: block;
+  top: -35px;
+}
+
 .section {
   padding: 1.5rem 0 1.5rem 0;
 }
