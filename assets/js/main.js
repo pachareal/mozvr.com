@@ -12,16 +12,6 @@ function $$ (selector, parent) {
   return toArray(parent.querySelectorAll(selector));
 }
 
-function resizeHandler (e) {
-  $$('.size-to-window').forEach(function (el) {
-    el.style.width = window.innerWidth + 'px';
-    el.style.height = window.innerHeight + 'px';
-  });
-}
-
-window.addEventListener('resize', resizeHandler);
-resizeHandler();
-
 // Adding a class so we can disable certain :hover styles on touch.
 // NOTE: Not using classList for IE compatibility.
 document.body.className += 'ontouchstart' in window ? ' has-touch' : ' lacks-touch';
