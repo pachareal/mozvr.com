@@ -365,19 +365,19 @@ nav ul, nav li {
   margin: 0;
 }
 
-nav {
+.nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background: rgba(245, 245, 245, 0.9);
-  z-index: 100;
+  z-index: 2;
   text-transform: uppercase;
   text-align: center;
   box-shadow: 0px 1px 0 0 rgba(0,0,0,.15);
 }
 
-.nav--top {
+.nav__top {
   display: block;
   float: left;
   font-size: 1rem;
@@ -394,22 +394,22 @@ nav {
   border-right: 1px solid #D0D0D0;
 }
 
-.nav--top:hover {
+.nav__top:hover {
   color: #333;
 }
 
-.nav--item {
+.nav__item {
   display: inline-block;
   padding: 0.5rem 1rem;
   transition: 0.1s ease-in-out;
 }
 
-.nav--item a {
+.nav__item a {
   color: #333;
   text-decoration: none;
 }
 
-.nav--item:hover {
+.nav__item:hover {
   background: #DCDCDC;
 }
 
@@ -455,7 +455,7 @@ Top intro section
 }
 
 .hero--headline {
-  z-index: 100;
+  z-index: 1;
 }
 
 .wordmark {
