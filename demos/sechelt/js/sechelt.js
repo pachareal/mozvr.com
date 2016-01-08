@@ -276,10 +276,11 @@ function onFullscreenChange(e) {
 function init() {
   // setup renderer
   renderer = new THREE.WebGLRenderer({
-    antialias: true
+    antialias: true,
+    alpha: true
   });
   renderer.autoClear = false;
-  renderer.setClearColor(0x404040);
+  renderer.setClearColor(0x000000, 0);
   document.body.appendChild(renderer.domElement);
 
   // setup scene
