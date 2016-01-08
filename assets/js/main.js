@@ -97,8 +97,18 @@ function isMobile() {
   return check;
 }
 
+var heroIframe = $('.hero--iframe');
+
 if (isMobile()) {
   document.body.className += ' isMobile';
+
+  if (heroIframe) {
+    // Even though the `<iframe>` is hidden, it will get loaded - so let's remove.
+    heroIframe.parentNode.removeChild(heroIframe);
+  }
+} else if (heroIframe) {
+  // We do this so mobile doesn't load the `<iframe src>`.
+  heroIframe.setAttribute('src', heroIframe.getAttribute('data-src'));
 }
 
 function initGoogleAnalytics (id) {
