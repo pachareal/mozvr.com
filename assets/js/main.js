@@ -32,21 +32,20 @@ document.body.className += isVr ? ' vr' : ' novr';
 
 // menu tabs
 function Tabs() {
-  var menuTabs = document.body.querySelectorAll('.menu--tabs');
+  var menuTabs = $$('.menu');
   this.activeSection = null;
   this.activeTab = null;
 
   // hide content panels
-  var menuContent = Array.from(document.body.querySelectorAll('.menu--content'));
-  menuContent.forEach(function(content) {
+  var menuContent = $$('.menu__copy');
+  menuContent.forEach(function (content) {
     content.style.display = 'none';
-  })
+  });
 
-  for (var i = 0; i < menuTabs.length; i++) {
-    var menuTab = menuTabs[i];
-    var tabs = Array.from(menuTab.querySelectorAll('li'));
+  menuTabs.forEach(function (menuTab) {
+    var tabs = $$('.menu__item', menuTab);
 
-    tabs.forEach(function(tab) {
+    tabs.forEach(function (tab) {
       var link = tab.querySelector('a[href]');
 
       link.addEventListener('click', function(e) {
@@ -64,9 +63,9 @@ function Tabs() {
         this.activeTab.classList.add('active');
         section.style.display = 'block';
         this.activeSection = section;
-      }.bind(this))
-    })
-  }
+      }.bind(this));
+    });
+  });
 }
 
 Tabs();
@@ -96,7 +95,7 @@ function isMobile() {
     }
   })(navigator.userAgent || navigator.vendor || window.opera);
   return check;
-};
+}
 
 if (isMobile()) {
   document.body.className += ' isMobile';

@@ -487,39 +487,37 @@ Getting Started
   order: 2;
 }
 
-menu {
+.menu {
   text-align: center;
 }
 
-menu a {
-  color: #333;
-}
-
-menu a:hover {
-  color: #333;
-}
-
-menu li {
+.menu__item {
   display: inline-block;
   margin: 0;
-  padding: 0.5rem 1.2rem;
   background: #efefef;
 }
 
-menu li:hover:not(.active) {
-  background: #DFDFDF;
-}
-
-menu .active {
-  color: #fff;
+.menu__item.active {
   background: #0c99d5;
 }
 
-menu .active a {
-  color: #fff;
+.menu__item a {
+  color: #333;
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
 }
 
-.menu--content {
+.menu__item a:hover {
+  background: #dfdfdf;
+}
+
+.menu__item.active a {
+  color: #fff;
+  pointer-events: none;
+  transition: none;
+}
+
+.menu__copy {
   margin: 1.5rem auto;
 }
 
