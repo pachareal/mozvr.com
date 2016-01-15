@@ -331,16 +331,19 @@ li {
   color: #A3BAD5;
 }
 
-/* content styles */
-.anchor {
-  position: relative;
-  visibility: hidden;
-  display: block;
-  top: -35px;
+.section {
+  padding: 1.5rem 0;
 }
 
-.section {
-  padding: 1.5rem 0 1.5rem 0;
+/**
+ * We place the anchors slightly above where the actual <section> starts because
+ * we have to account for the height of the main nav that is obscuring the top
+ * of the section. (See https://github.com/MozVR/mozvr.com/issues/17)
+ */
+.section__anchor {
+  position: relative;
+  top: -3.9rem;  /* See issue #24 for making the header nav of a fixed height. */
+  visibility: hidden;
 }
 
 .section__wrap {
@@ -466,7 +469,7 @@ Top intro section
 }
 
 .wordmark {
-  width:15rem;
+  width: 15rem;
   color: #333;
   background: #ffcd02;
   box-shadow: -3px 3px 0 0 rgba(0,0,0,.15);
@@ -490,7 +493,7 @@ Top intro section
 /*
 Getting Started
 */
-.vr #start {
+.vr .section--start {
   order: 2;
 }
 
@@ -535,16 +538,16 @@ Showcase
   display: none;
 }
 
-#showcase {
+.section--showcase {
   order: 1;
   background: #292c38;
 }
 
-#showcase h1 {
+.section--showcase h1 {
   display: none;
 }
 
-.novr #showcase h1 {
+.novr .section--showcase h1 {
   display: block;
   color: #fff;
 }
@@ -554,7 +557,7 @@ Showcase
 }
 
 
-.vr #showcase .vrEnabled {
+.vr .section--showcase .vrEnabled {
   display: block;
 }
 
@@ -620,13 +623,13 @@ Showcase
 
 /*
 developers
- */
+*/
 
-#developers {
+.section--developers {
   background: #efefef;
 }
 
-#developers h2 {
+.section--developers h2 {
   color: #1f366c;
 }
 
@@ -634,22 +637,24 @@ developers
 team
 */
 
-#team {
+.section--team {
   border-top: 1px solid #efefef;
 }
 
-#team h2 {
-  margin: 0 0 0.5rem 0;
+.section--team h2 {
+  margin: 0 0 0.5rem;
 }
 
 .team--item {
-  margin: 0 0 2rem 0;
+  margin: 0 0 2rem;
   height: 5rem;
 }
 
 .team--title, .team--social {
   color: #828282;
 }
+
+
 /*
 footer
 */
