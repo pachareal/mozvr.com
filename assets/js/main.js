@@ -68,15 +68,8 @@ if (isMobile()) {
   clickEl = document.querySelector('a[href="#rift"]');
 }
 
-clickEl.dispatchEvent(new MouseEvent('click', {
-  'view': window,
-  'bubbles': true,
-  'cancelable': true
-}));
+clickEl.click();
 
-
-
-// ismobile
 function isMobile() {
   var check = false;
   (function (a) {
