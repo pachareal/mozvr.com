@@ -528,7 +528,7 @@ Getting Started
   padding: 0.5rem 1.2rem;
 }
 
-.menu__item a:hover {
+.menu__item:not(.active) a:hover {
   background: #dfdfdf;
 }
 
