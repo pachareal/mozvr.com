@@ -1,6 +1,7 @@
 /*
 colors:
 darkblue: #1f366c
+lightblue: #86d6f8
 cobalt: #292c38
 salmon: #e14164
 */
@@ -671,17 +672,13 @@ footer
   color: #0c99d5;
 }
 
-.section--footer a {
-  color: #fff;
-}
-
 .footer__icons {
   margin: 0 auto;
   max-width: 100px;
 }
 
-.footer__legal {
-  max-width: 50rem;
+.footer__license {
+  max-width: 40rem;
   margin: auto;
 }
 
@@ -693,19 +690,32 @@ footer
   border: 0;
 }
 
-a.link--legal {
+a.link--footer {
   border-bottom: 1px dotted rgba(255, 255, 255, 0.25);
-  color: #ccc;
   padding-bottom: 1px;
-  line-height: 2;
+  line-height: 1.8;
   white-space: nowrap;
 }
 
-.link--legal:hover {
+.link--footer:hover {
   border-bottom-color: rgba(255, 255, 255, 0.8);
+}
+
+a.link--legal {
+  color: #ccc;
+}
+
+.link--legal:hover {
   color: #eee;
 }
 
+a.link--license {
+  color: #0c99d5;
+}
+
+a.link--license:hover {
+  color: #86d6f8;
+}
 
 /*
 media queries
