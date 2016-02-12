@@ -494,10 +494,13 @@ Top intro section
 }
 
 .headline {
+  background: rgba(0,0,0,.5);
+  box-shadow: -3px 3px 0 0 rgba(0,0,0,.15);
   font-size: 1.2rem;
   color: #fff;
   max-width: 35rem;
   margin: 3rem;
+  padding: 0.5rem 1rem;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
 }
 
