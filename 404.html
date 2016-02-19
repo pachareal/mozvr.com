@@ -3,21 +3,43 @@
   <head>
     <meta charset="utf-8">
     <script>
-      // Redirects for legacy site.
-      var path = window.location.pathname;
-      function pathIs (url) {
-        return path.indexOf(url) !== -1;
-      }
-      function redirect (url) {
-        window.location.href = url;
-      }
-      if (pathIs('/downloads')) {
-        redirect('/#start');
-      } else if (pathIs('/projects')) {
-        redirect('/#showcase');
-      } else {
-        redirect('/');
-      }
+      (function () {
+        // Legacy redirects.
+        var BLOG_BASE_URL = 'https://mozvr.ghost.io';
+        var path = window.location.pathname;
+        var qs = window.location.search;
+        var pathWithSlash = addSlash(path);
+
+        function addSlash (path) {
+          if (path.substr(-1) !== '/') {
+            path += '/';
+          }
+          return path;
+        }
+        function pathIs (url) {
+          return pathWithSlash === addSlash(url);
+        }
+        function pathContains (url) {
+          return pathWithSlash.indexOf(addSlash(url)) !== -1;
+        }
+        function redirect (url) {
+          window.location.href = url + qs;
+        }
+
+        if (pathIs('/posts/webvr-lands-in-nightly/')) {
+          redirect(BLOG_BASE_URL + '/webvr-lands-in-firefox-nightly/');
+        } else if (pathIs('/posts/quick-vr-prototypes/')) {
+          redirect(BLOG_BASE_URL + '/quick-vr-prototypes/');
+        } else if (pathContains('/posts/') || pathContains('/blog/')) {
+          redirect(BLOG_BASE_URL);
+        } else if (pathContains('/downloads')) {
+          redirect('/#start');
+        } else if (pathContains('/projects')) {
+          redirect('/#showcase');
+        } else {
+          redirect('/');
+        }
+      })();
     </script>
   </head>
   <body></body>
