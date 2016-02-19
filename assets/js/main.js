@@ -12,16 +12,6 @@ function $$ (selector, parent) {
   return toArray(parent.querySelectorAll(selector));
 }
 
-function resizeHandler (e) {
-  $$('.size-to-window').forEach(function (el) {
-    el.style.width = window.innerWidth + 'px';
-    el.style.height = window.innerHeight + 'px';
-  });
-}
-
-window.addEventListener('resize', resizeHandler);
-resizeHandler();
-
 // Adding a class so we can disable certain :hover styles on touch.
 // NOTE: Not using classList for IE compatibility.
 document.body.className += 'ontouchstart' in window ? ' has-touch' : ' lacks-touch';
@@ -32,21 +22,20 @@ document.body.className += isVr ? ' vr' : ' novr';
 
 // menu tabs
 function Tabs() {
-  var menuTabs = document.body.querySelectorAll('.menu--tabs');
+  var menuTabs = $$('.menu');
   this.activeSection = null;
   this.activeTab = null;
 
   // hide content panels
-  var menuContent = Array.from(document.body.querySelectorAll('.menu--content'));
-  menuContent.forEach(function(content) {
+  var menuContent = $$('.menu__copy');
+  menuContent.forEach(function (content) {
     content.style.display = 'none';
-  })
+  });
 
-  for (var i = 0; i < menuTabs.length; i++) {
-    var menuTab = menuTabs[i];
-    var tabs = Array.from(menuTab.querySelectorAll('li'));
+  menuTabs.forEach(function (menuTab) {
+    var tabs = $$('.menu__item', menuTab);
 
-    tabs.forEach(function(tab) {
+    tabs.forEach(function (tab) {
       var link = tab.querySelector('a[href]');
 
       link.addEventListener('click', function(e) {
@@ -64,9 +53,9 @@ function Tabs() {
         this.activeTab.classList.add('active');
         section.style.display = 'block';
         this.activeSection = section;
-      }.bind(this))
-    })
-  }
+      }.bind(this));
+    });
+  });
 }
 
 Tabs();
@@ -79,15 +68,8 @@ if (isMobile()) {
   clickEl = document.querySelector('a[href="#rift"]');
 }
 
-clickEl.dispatchEvent(new MouseEvent('click', {
-  'view': window,
-  'bubbles': true,
-  'cancelable': true
-}));
+clickEl.click();
 
-
-
-// ismobile
 function isMobile() {
   var check = false;
   (function (a) {
@@ -96,10 +78,20 @@ function isMobile() {
     }
   })(navigator.userAgent || navigator.vendor || window.opera);
   return check;
-};
+}
+
+var heroIframe = $('.hero--iframe');
 
 if (isMobile()) {
   document.body.className += ' isMobile';
+
+  if (heroIframe) {
+    // Even though the `<iframe>` is hidden, it will get loaded - so let's remove.
+    heroIframe.parentNode.removeChild(heroIframe);
+  }
+} else if (heroIframe) {
+  // We do this so mobile doesn't load the `<iframe src>`.
+  heroIframe.setAttribute('src', heroIframe.getAttribute('data-src'));
 }
 
 function initGoogleAnalytics (id) {

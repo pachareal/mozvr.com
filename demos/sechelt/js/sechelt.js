@@ -24,7 +24,19 @@ var isMobile = function () {
   return check;
 };
 
+var getUrlParameter = function (name) {
+  name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+  var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+  var results = regex.exec(location.search);
+  return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+
 function setupSound() {
+  var qsSound = getUrlParameter('sound');
+  if (qsSound === '0' || qsSound === 'off' || qsSound === 'false') {
+    return;
+  }
+
   var listener = new THREE.AudioListener();
   camera.add(listener);
 
@@ -264,10 +276,11 @@ function onFullscreenChange(e) {
 function init() {
   // setup renderer
   renderer = new THREE.WebGLRenderer({
-    antialias: true
+    antialias: true,
+    alpha: true
   });
   renderer.autoClear = false;
-  renderer.setClearColor(0x404040);
+  renderer.setClearColor(0x000000, 0);
   document.body.appendChild(renderer.domElement);
 
   // setup scene

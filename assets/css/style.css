@@ -1,9 +1,151 @@
 /*
 colors:
 darkblue: #1f366c
+lightblue: #86d6f8
 cobalt: #292c38
 salmon: #e14164
 */
+
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-Hair.eot');
+  src: local('Fira Sans Hair'), url('../fonts/fira/eot/FiraSans-Hair.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-Hair.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-Hair.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-Hair.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-HairItalic.eot');
+  src: local('Fira Sans Hair Italic'), url('../fonts/fira/eot/FiraSans-HairItalic.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-HairItalic.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-HairItalic.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-HairItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-UltraLight.eot');
+  src: local('Fira Sans UltraLight'), url('../fonts/fira/eot/FiraSans-UltraLight.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-UltraLight.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-UltraLight.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-UltraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-UltraLightItalic.eot');
+  src: local('Fira Sans UltraLight Italic'), url('../fonts/fira/eot/FiraSans-UltraLightItalic.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-UltraLightItalic.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-UltraLightItalic.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-UltraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-Light.eot');
+  src: local('Fira Sans Light'), url('../fonts/fira/eot/FiraSans-Light.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-Light.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-Light.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-LightItalic.eot');
+  src: local('Fira Sans Light Italic'), url('../fonts/fira/eot/FiraSans-LightItalic.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-LightItalic.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-LightItalic.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-Regular.eot');
+  src: local('Fira Sans Regular'), url('../fonts/fira/eot/FiraSans-Regular.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-Regular.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-Regular.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-Italic.eot');
+  src: local('Fira Sans Regular Italic'), url('../fonts/fira/eot/FiraSans-Italic.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-Italic.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-Italic.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-Medium.eot');
+  src: local('Fira Sans Medium'), url('../fonts/fira/eot/FiraSans-Medium.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-Medium.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-Medium.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-MediumItalic.eot');
+  src: local('Fira Sans Medium Italic'), url('../fonts/fira/eot/FiraSans-MediumItalic.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-MediumItalic.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-MediumItalic.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-SemiBold.eot');
+  src: local('Fira Sans SemiBold'), url('../fonts/fira/eot/FiraSans-SemiBold.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-SemiBold.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-SemiBold.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-SemiBoldItalic.eot');
+  src: local('Fira Sans SemiBold Italic'), url('../fonts/fira/eot/FiraSans-SemiBoldItalic.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-SemiBoldItalic.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-SemiBoldItalic.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-Bold.eot');
+  src: local('Fira Sans Bold'), url('../fonts/fira/eot/FiraSans-Bold.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-Bold.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-Bold.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-BoldItalic.eot');
+  src: local('Fira Sans Bold Italic'), url('../fonts/fira/eot/FiraSans-BoldItalic.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-BoldItalic.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-BoldItalic.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-ExtraBold.eot');
+  src: local('Fira Sans ExtraBold'), url('../fonts/fira/eot/FiraSans-ExtraBold.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-ExtraBold.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-ExtraBold.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-ExtraBoldItalic.eot');
+  src: local('Fira Sans ExtraBold Italic'), url('../fonts/fira/eot/FiraSans-ExtraBoldItalic.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-ExtraBoldItalic.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-ExtraBoldItalic.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-Heavy.eot');
+  src: local('Fira Sans Heavy'), url('../fonts/fira/eot/FiraSans-Heavy.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-Heavy.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-Heavy.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/fira/eot/FiraSans-HeavyItalic.eot');
+  src: local('Fira Sans Heavy Italic'), url('../fonts/fira/eot/FiraSans-HeavyItalic.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraSans-HeavyItalic.woff2') format('woff2'), url('../fonts/fira/woff/FiraSans-HeavyItalic.woff') format('woff'), url('../fonts/fira/ttf/FiraSans-HeavyItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Fira Mono';
+  src: url('../fonts/fira/eot/FiraMono-Regular.eot');
+  src: local('Fira Mono'), url('../fonts/fira/eot/FiraMono-Regular.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraMono-Regular.woff2') format('woff2'), url('../fonts/fira/woff/FiraMono-Regular.woff') format('woff'), url('../fonts/fira/ttf/FiraMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Mono';
+  src: url('../fonts/fira/eot/FiraMono-Bold.eot');
+  src: local('Fira Mono Bold'), url('../fonts/fira/eot/FiraMono-Bold.eot') format('embedded-opentype'), url('../fonts/fira/woff2/FiraMono-Bold.woff2') format('woff2'), url('../fonts/fira/woff/FiraMono-Bold.woff') format('woff'), url('../fonts/fira/ttf/FiraMono-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
 
 * {
   box-sizing: border-box;
@@ -13,6 +155,7 @@ salmon: #e14164
 
 html, body {
   background: #fff;
+  width: 100%;
 }
 
 html {
@@ -93,6 +236,10 @@ li {
   padding: 0.2em;
 }
 
+p ~ .cols-1-3 {
+  margin-top: 1.5rem;
+}
+
 .cols-1-3 {
   width: 33%;
   float: left;
@@ -100,7 +247,7 @@ li {
   height: 100%;
 }
 
-.cols-1-5  {
+.cols-1-5 {
   width: 20%;
   float: left;
 }
@@ -184,21 +331,37 @@ li {
   font-weight: 400;
 }
 
-.copy--med {
+.copy--subtitle {
   font-size: 1.2rem;
-  line-height: 1.2rem;
+}
+
+.copy--bright .copy--subtitle {
   color: #A3BAD5;
 }
 
-/* content styles */
 .section {
-  padding: 1.5rem 0 1.5rem 0;
+  padding: 1.5rem 0;
 }
 
-.section__wrap {
+/**
+ * We place the anchors slightly above where the actual <section> starts because
+ * we have to account for the height of the main nav that is obscuring the top
+ * of the section. (See https://github.com/MozVR/mozvr.com/issues/17)
+ */
+.section__anchor {
+  position: relative;
+  top: -3.9rem;  /* See issue #24 for making the header nav of a fixed height. */
+  visibility: hidden;
+}
+
+.wrap {
   margin: 0 auto;
   max-width: 1024px;
   padding: 1rem;
+}
+
+.wrap--narrow {
+  max-width: 780px;
 }
 
 .showcase__grid {
@@ -224,19 +387,19 @@ nav ul, nav li {
   margin: 0;
 }
 
-nav {
+.nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background: rgba(245, 245, 245, 0.9);
-  z-index: 100;
+  z-index: 2;
   text-transform: uppercase;
   text-align: center;
   box-shadow: 0px 1px 0 0 rgba(0,0,0,.15);
 }
 
-.nav--top {
+.nav__top {
   display: block;
   float: left;
   font-size: 1rem;
@@ -253,22 +416,22 @@ nav {
   border-right: 1px solid #D0D0D0;
 }
 
-.nav--top:hover {
+.nav__top:hover {
   color: #333;
 }
 
-.nav--item {
+.nav__item {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  transition: 0.1s ease-in-out;
 }
 
-.nav--item a {
+.nav__item a {
   color: #333;
+  display: block;
+  padding: 0.5rem 1rem;
   text-decoration: none;
 }
 
-.nav--item:hover {
+.nav__item:hover {
   background: #DCDCDC;
 }
 
@@ -314,11 +477,11 @@ Top intro section
 }
 
 .hero--headline {
-  z-index: 100;
+  z-index: 1;
 }
 
 .wordmark {
-  width:15rem;
+  width: 15rem;
   color: #333;
   background: #ffcd02;
   box-shadow: -3px 3px 0 0 rgba(0,0,0,.15);
@@ -331,10 +494,13 @@ Top intro section
 }
 
 .headline {
+  background: rgba(0,0,0,.5);
+  box-shadow: -3px 3px 0 0 rgba(0,0,0,.15);
   font-size: 1.2rem;
   color: #fff;
   max-width: 35rem;
   margin: 3rem;
+  padding: 0.5rem 1rem;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -342,43 +508,41 @@ Top intro section
 /*
 Getting Started
 */
-.vr #start {
+.vr .section--start {
   order: 2;
 }
 
-menu {
+.menu {
   text-align: center;
 }
 
-menu a {
-  color: #333;
-}
-
-menu a:hover {
-  color: #333;
-}
-
-menu li {
+.menu__item {
   display: inline-block;
   margin: 0;
-  padding: 0.5rem 1.2rem;
   background: #efefef;
 }
 
-menu li:hover:not(.active) {
-  background: #DFDFDF;
-}
-
-menu .active {
-  color: #fff;
+.menu__item.active {
   background: #0c99d5;
 }
 
-menu .active a {
-  color: #fff;
+.menu__item a {
+  color: #333;
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
 }
 
-.menu--content {
+.menu__item:not(.active) a:hover {
+  background: #dfdfdf;
+}
+
+.menu__item.active a {
+  color: #fff;
+  pointer-events: none;
+  transition: none;
+}
+
+.menu__copy {
   margin: 1.5rem auto;
 }
 
@@ -389,16 +553,16 @@ Showcase
   display: none;
 }
 
-#showcase {
+.section--showcase {
   order: 1;
   background: #292c38;
 }
 
-#showcase h1 {
+.section--showcase h1 {
   display: none;
 }
 
-.novr #showcase h1 {
+.novr .section--showcase h1 {
   display: block;
   color: #fff;
 }
@@ -407,11 +571,9 @@ Showcase
   display: none;
 }
 
-
-.vr #showcase .vrEnabled {
+.vr .section--showcase .vrEnabled {
   display: block;
 }
-
 
 .showcase__item {
   flex: 0 1 33.3333%;
@@ -474,13 +636,13 @@ Showcase
 
 /*
 developers
- */
+*/
 
-#developers {
+.section--developers {
   background: #efefef;
 }
 
-#developers h2 {
+.section--developers h2 {
   color: #1f366c;
 }
 
@@ -488,22 +650,24 @@ developers
 team
 */
 
-#team {
+.section--team {
   border-top: 1px solid #efefef;
 }
 
-#team h2 {
-  margin: 0 0 0.5rem 0;
+.section--team h2 {
+  margin: 0 0 0.5rem;
 }
 
 .team--item {
-  margin: 0 0 2rem 0;
+  margin: 0 0 2rem;
   height: 5rem;
 }
 
 .team--title, .team--social {
   color: #828282;
 }
+
+
 /*
 footer
 */
@@ -512,17 +676,13 @@ footer
   color: #0c99d5;
 }
 
-.section--footer a {
-  color: #fff;
-}
-
 .footer__icons {
   margin: 0 auto;
   max-width: 100px;
 }
 
-.footer__legal {
-  max-width: 50rem;
+.footer__license {
+  max-width: 40rem;
   margin: auto;
 }
 
@@ -534,19 +694,32 @@ footer
   border: 0;
 }
 
-a.link--legal {
+a.link--footer {
   border-bottom: 1px dotted rgba(255, 255, 255, 0.25);
-  color: #ccc;
   padding-bottom: 1px;
-  line-height: 2;
+  line-height: 1.8;
   white-space: nowrap;
 }
 
-.link--legal:hover {
+.link--footer:hover {
   border-bottom-color: rgba(255, 255, 255, 0.8);
+}
+
+a.link--legal {
+  color: #ccc;
+}
+
+.link--legal:hover {
   color: #eee;
 }
 
+a.link--license {
+  color: #0c99d5;
+}
+
+a.link--license:hover {
+  color: #86d6f8;
+}
 
 /*
 media queries
@@ -565,29 +738,28 @@ media queries
   .cols-1-5 {
     width: 33%;
   }
-  .width-75 {
-    width: 100%;
-  }
 }
 
 @media (max-width: 599px) {
   nav {
     display: none;
   }
-
   .showcase__link {
     margin: 0;
   }
   .showcase__item {
     flex-basis: 100%;
   }
+  .wrap .wrap {
+    padding: 1rem 0;
+  }
+  .wrap--narrow.copy--center {
+    text-align: left;
+  }
   .cols-1-3 {
     width: 100%;
   }
   .cols-1-5 {
     width: 50%;
-  }
-  .width-75 {
-    width: 100%;
   }
 }
