@@ -506,57 +506,6 @@ Top intro section
 
 
 /*
-News
-*/
-.section--news {
-  background: #efefff;
-}
-
-.section--news h2 {
-  color: #1f366c;
-}
-
-.posts {
-  list-style: none;
-}
-
-.post__title {
-  border-bottom: 1px dotted rgba(0,0,0,0.25);
-  padding-bottom: 1px;
-}
-
-.post__date {
-  float: right;
-  font-weight: 400;
-  opacity: 0.5;
-  padding-bottom: 2px;
-}
-
-.post__link,
-.post__date {
-  transition: 0.05s ease-in-out;
-}
-
-.post__link {
-  color: #0c99d5;
-  display: block;
-  font-weight: 500;
-  padding: 0.1rem 0;
-}
-
-.post__link:hover {
-  color: #1f366c;
-}
-
-.post__link:hover .post__title {
-  border-bottom-color: rgba(0,0,0,0.8);
-}
-
-.post__link:hover .post__date {
-  opacity: 0.75;
-}
-
-/*
 Getting Started
 */
 .vr .section--start {
