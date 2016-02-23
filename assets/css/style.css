@@ -780,6 +780,10 @@ a.link--license:hover {
   color: #86d6f8;
 }
 
+.link--blog {
+  display: none;
+}
+
 /*
 media queries
 */
@@ -790,6 +794,17 @@ media queries
   }
   .flex--grid--item {
     flex-basis: 50%;
+  }
+  .link--blog {
+    background: #e14164;
+    display: inline-block;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    margin: 0 auto 1.5rem;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    text-transform: uppercase;
   }
 }
 
