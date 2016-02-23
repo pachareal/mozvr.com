@@ -163,8 +163,12 @@ html {
 }
 
 body {
-  font: 300 1rem/1.2 "Fira Sans", sans-serif;
+  font: 300 1rem/1.2 Helvetica Neue, Helvetica, san-serif;
   line-height: 1.5rem;
+}
+
+.fonts-loaded body {
+  font-family: Fira Sans, sans-serif;
 }
 
 h1, h2, h3, h4 {
