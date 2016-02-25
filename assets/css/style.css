@@ -788,6 +788,14 @@ a.link--license:hover {
   display: none;
 }
 
+/* Hide WebVR pages that haven't been updated for the new API. */
+[data-supports-vr="false"][data-supports-vr-legacy="true"] [data-showcase-slug="inspirit"],
+[data-supports-vr="false"][data-supports-vr-legacy="true"] [data-showcase-slug="livyatanim"],
+[data-supports-vr="false"][data-supports-vr-legacy="true"] [data-showcase-slug="monkeys"],
+[data-supports-vr="false"][data-supports-vr-legacy="true"] [data-showcase-slug="rainbowmembrane"] {
+  display: none;
+}
+
 /*
 media queries
 */

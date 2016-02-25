@@ -36,7 +36,7 @@ function $$ (selector, parent) {
 var body = document.body;
 
 // Adding an attribute so we can disable certain :hover styles on touch.
-// NOTE: Not using classList `dataset` IE compatibility.
+// NOTE: Not using `dataset` for IE compatibility.
 body.setAttribute('data-supports-touch', 'ontouchstart' in window);
 
 // And an attribute for WebVR support.
