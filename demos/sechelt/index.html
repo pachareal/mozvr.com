@@ -19,16 +19,12 @@
     }
 
     #enterVr {
-      display: none;
-    }
-
-    .vr #enterVr {
       background: transparent;
       border: 0;
       bottom: 0;
       color: #fff;
       cursor: pointer;
-      display: block;
+      display: none;
       font-size: 1rem;
       letter-spacing: 0.05ch;
       line-height: 1.5;
@@ -40,7 +36,16 @@
       width: 100%;
     }
 
-    .vr #enterVr:before {
+    [data-supports-vr="true"] #enterVr {
+      display: block;
+    }
+
+    /* Styles and web fonts cascade with Firefox only, so we explicitly set the `font-family` */
+    [data-supports-vr="true"][data-is-firefox="false"] #enterVr {
+      font-family: Fira Sans, Helvetica Neue, Helvetica, sans-serif;
+    }
+
+    #enterVr:before {
       background: url(../../assets/img/icon-goggles-white.svg) 50% 0 no-repeat;
       background-size: contain;
       content: "";
@@ -49,13 +54,8 @@
       margin-bottom: 5px;
     }
 
-    .vr #enterVr:hover {
+    #enterVr:hover {
       opacity: 1;
-    }
-
-    /* Styles and web fonts cascade with Firefox only, so we explicitly set the `font-family` */
-    [data-is-firefox="false"] .vr #enterVr {
-      font-family: Fira Sans, Helvetica Neue, Helvetica, sans-serif;
     }
     </style>
   </head>
@@ -67,8 +67,7 @@
     <script src="js/three.min.js"></script>
     <script>
     // detect VR
-    var isVr = 'getVRDevices' in navigator;
-    document.body.className += isVr ? ' vr' : ' novr';
+    document.body.setAttribute('data-supports-vr', 'getVRDisplays' in navigator || 'getVRDevices' in navigator);
 
     // detect mobile
     function isMobile() {
@@ -88,9 +87,7 @@
       return /iPad|iPhone|iPod/.test(navigator.platform);
     };
 
-    if (isMobile()) {
-      document.body.className += ' isMobile';
-    }
+    document.body.setAttribute('data-supports-mobile', isMobile());
     </script>
     <script src="js/webvr-polyfill.js"></script>
     <script src="js/VRControls.js"></script>
