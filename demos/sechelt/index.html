@@ -3,7 +3,14 @@
   <head>
     <title>Sechelt</title>
     <meta charset="utf-8">
+    <script>
+      document.documentElement.setAttribute('data-is-firefox', 'InstallTrigger' in window);
+    </script>
     <style>
+    html {
+      font-size: 14px;
+    }
+
     html, body {
       background-color: none transparent;
       color: #fff;
@@ -16,24 +23,45 @@
     }
 
     .vr #enterVr {
-      display: block;
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      text-align: center;
-      margin: auto;
       background: transparent;
       border: 0;
+      bottom: 0;
       color: #fff;
-      padding: 10px;
-      font-size: 0.8rem;
+      cursor: pointer;
+      display: block;
+      font-size: 1rem;
+      letter-spacing: 0.05ch;
+      line-height: 1.5;
+      margin: auto;
+      opacity: 0.85;
+      padding: 1px 1px 31px;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+    }
+
+    .vr #enterVr:before {
+      background: url(../../assets/img/icon-goggles-white.svg) 50% 0 no-repeat;
+      background-size: contain;
+      content: "";
+      display: block;
+      height: 33px;
+      margin-bottom: 5px;
+    }
+
+    .vr #enterVr:hover {
+      opacity: 1;
+    }
+
+    /* Styles and web fonts cascade with Firefox only, so we explicitly set the `font-family` */
+    [data-is-firefox="false"] .vr #enterVr {
+      font-family: Fira Sans, Helvetica Neue, Helvetica, sans-serif;
     }
     </style>
   </head>
 
   <body>
     <button id="enterVr">
-      <img height="30" class="icon icon--social" src="../../assets/img/icon-goggles-white.svg"><br/>
       ENTER VR
     </button>
     <script src="js/three.min.js"></script>
