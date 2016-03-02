@@ -789,6 +789,7 @@ a.link--license:hover {
 }
 
 /* Hide WebVR pages that haven't been updated for the new API. */
+[data-supports-vr="false"][data-supports-vr-legacy="true"] [data-showcase-slug="waytogo"],
 [data-supports-vr="false"][data-supports-vr-legacy="true"] [data-showcase-slug="inspirit"],
 [data-supports-vr="false"][data-supports-vr-legacy="true"] [data-showcase-slug="livyatanim"],
 [data-supports-vr="false"][data-supports-vr-legacy="true"] [data-showcase-slug="monkeys"],
