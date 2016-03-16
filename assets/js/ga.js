@@ -58,6 +58,21 @@ function initGoogleAnalyticsEvents () {
       }
     });
   }
+
+  var gdcPage = document.querySelector('html[data-gdc]');
+  if (gdcPage) {
+    gdcPage.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a') || e.target;
+      if (!a) { return; }
+      if (a.matches('#gdc-logo-link')) {
+        window.ga('send', 'event', 'click.nav.mozvr_link', a.querySelector('img').getAttribute('alt'));
+      } else if (a.matches('#gdc-info-link')) {
+        window.ga('send', 'event', 'click.nav.section_link', a.textContent);
+      } else if (a.matches('#gdc-continue-link')) {
+        window.ga('send', 'event', 'click.nav.icon_link', a.textContent);
+      }
+    });
+  }
 }
 
 initGoogleAnalytics('UA-24056643-3');
