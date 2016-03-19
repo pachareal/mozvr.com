@@ -1,12 +1,12 @@
 <!doctype html>
-<html>
+<html data-index>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fff">
     <title>MozVR</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="shortcut icon" href="assets/images/icon-mozvr-fox-128.png">
+    <link rel="shortcut icon" href="assets/img/icon-mozvr-fox-128.png">
 
     <meta property="og:title" content="MOZVR">
     <meta property="og:site_name" content="MOZVR">
@@ -43,7 +43,7 @@
 
     <header id="header" class="header">
       <div id="hero" class="hero flex flex--center">
-        <iframe class="hero--iframe" allowfullscreen allowtransparency="true" data-src="demos/sechelt/?sound=false"></iframe>
+        <iframe class="hero--iframe" allowfullscreen seamless data-src="demos/sechelt/?sound=false"></iframe>
 
         <div class="hero--headline copy--center">
           <h1 class="wordmark">MOZVR</h1>
@@ -87,10 +87,10 @@
             <div class="device-instructions">
               <ol>
                 <li>Install the latest <a href="https://developer.oculus.com/downloads/" target="_blank">Oculus runtime</a>.</li>
-                <li>Install <a href="https://nightly.mozilla.org/" target="_blank">Firefox Nightly</a>, or <a href="https://drive.google.com/folderview?id=0BzudLt22BqGRbW9WTHMtOWMzNjQ&amp;usp=sharing#list" target="_blank">experimental builds of Chromium</a></li>
+                <li>Install <a href="https://nightly.mozilla.org/" target="_blank">Firefox Nightly</a> or <a href="https://drive.google.com/folderview?id=0BzudLt22BqGRbW9WTHMtOWMzNjQ&amp;usp=sharing#list" target="_blank">experimental builds of Chromium</a>.</li>
                 <li>Install the <a href="https://addons.mozilla.org/en-US/firefox/addon/mozilla-webvr-enabler/" target="_blank">WebVR enabler add-on</a> (Firefox only).</li>
                 <li>Open your site.</li>
-                <li>Make sure your headset is plugged in and working properly. Lights on the headset and camera should be blue.</li>
+                <li>Make sure your headset is plugged in and working properly. The lights on the headset and camera should be blue.</li>
                 <li>Press the "Enter VR" button.</li>
               </ol>
             </div>
@@ -122,7 +122,25 @@
           </div>
 
           <ul class="flex flex--grid flex--grid--stretch showcase__grid">
-            <li class="flex flex--grid--item showcase__item">
+            <li class="flex flex--grid--item showcase__item" data-showcase-slug="waytogo">
+              <a class="showcase__link no-decoration" href="http://a-way-to-go.com">
+                <div class="showcase__image" style="background-image: url(assets/img/showcase/waytogo.png)"></div>
+
+                <h3 class="showcase__title">Way to Go</h3>
+                <p class="showcase__author">National Film Board of Canada</p>
+              </a>
+            </li>
+
+            <li class="flex flex--grid--item showcase__item" data-showcase-slug="spacelamb">
+              <a class="showcase__link no-decoration" href="http://m.spacelamb.12wave.com">
+                <div class="showcase__image" style="background-image: url(assets/img/showcase/spacelamb.png)"></div>
+
+                <h3 class="showcase__title">Space Lamb</h3>
+                <p class="showcase__author">12Wave</p>
+              </a>
+            </li>
+
+            <li class="flex flex--grid--item showcase__item" data-showcase-slug="videosphere">
               <a class="showcase__link no-decoration" href="https://aframe.io/examples/showcase/videosphere/">
                 <div class="showcase__image" style="background-image: url(assets/img/showcase/360video.png)"></div>
 
@@ -131,7 +149,7 @@
               </a>
             </li>
 
-            <li class="flex flex--grid--item showcase__item">
+            <li class="flex flex--grid--item showcase__item" data-showcase-slug="shopping">
               <a class="showcase__link no-decoration" href="https://aframe.io/examples/showcase/shopping/">
                 <div class="showcase__image" style="background-image: url(assets/img/showcase/shopping.png)"></div>
 
@@ -140,7 +158,7 @@
               </a>
             </li>
 
-            <li class="flex flex--grid--item showcase__item desktop">
+            <li class="flex flex--grid--item showcase__item" data-showcase-slug="livyatanim">
               <a class="showcase__link no-decoration" href="http://film.livyatanim.com/">
                 <div class="showcase__image" style="background-image: url(assets/img/showcase/livyatanim.png)"></div>
 
@@ -149,7 +167,7 @@
               </a>
             </li>
 
-            <li class="flex flex--grid--item showcase__item desktop">
+            <li class="flex flex--grid--item showcase__item desktop" data-showcase-slug="monkeys">
               <a class="showcase__link no-decoration" href="http://monkeys.hypernom.com/">
                 <div class="showcase__image" style="background-image: url(assets/img/showcase/monkeys.png)"></div>
 
@@ -158,7 +176,7 @@
               </a>
             </li>
 
-            <li class="flex flex--grid--item showcase__item">
+            <li class="flex flex--grid--item showcase__item" data-showcase-slug="panorama">
               <a class="showcase__link no-decoration" href="https://mozvr.github.io/panorama-viewer/">
                 <div class="showcase__image" style="background-image: url(assets/img/showcase/panorama.png)"></div>
 
@@ -168,7 +186,7 @@
               </a>
             </li>
 
-            <li class="flex flex--grid--item showcase__item desktop">
+            <li class="flex flex--grid--item showcase__item desktop" data-showcase-slug="rainbowmembrane">
               <a class="showcase__link no-decoration" href="http://cabbi.bo/RainbowMembrane/">
                 <div class="showcase__image" style="background-image: url(assets/img/showcase/rainbowmembrane.png)"></div>
 
@@ -178,7 +196,7 @@
               </a>
             </li>
 
-            <li class="flex flex--grid--item showcase__item">
+            <li class="flex flex--grid--item showcase__item" data-showcase-slug="sechelt">
               <a class="showcase__link no-decoration" href="https://mozvr.github.io/sechelt/">
                 <div class="showcase__image" style="background-image: url(assets/img/showcase/sechelt.png)"></div>
 
@@ -188,7 +206,7 @@
               </a>
             </li>
 
-            <li class="flex flex--grid--item showcase__item">
+            <li class="flex flex--grid--item showcase__item" data-showcase-slug="polarsea">
               <a class="showcase__link no-decoration" href="demos/polarsea/">
                 <div class="showcase__image" style="background-image: url(assets/img/showcase/polarsea.png)"></div>
 
@@ -198,7 +216,7 @@
               </a>
             </li>
 
-            <li class="flex flex--grid--item showcase__item">
+            <li class="flex flex--grid--item showcase__item" data-showcase-slug="inspirit">
               <a class="showcase__link no-decoration" href="http://inspirit.unboring.net/">
                 <div class="showcase__image" style="background-image: url(assets/img/showcase/inspirit.png)"></div>
 
@@ -332,9 +350,11 @@
     <footer class="section section--footer section--thin copy copy--bright copy--center">
       <div id="footer" class="section__anchor"></div>
       <div class="wrap wrap--footer">
+        <a href="https://mozvr.ghost.io/" class="link--blog" target="_blank">View Blog</a>
+
         <div class="footer__icons">
           <p>
-            <a href="https://www.mozilla.org/"><img class="icon icon--mozilla" src="assets/img/logo-mozilla-white.svg" alt="Mozilla"></a>
+            <a href="https://www.mozilla.org/"><img class="icon icon--mozilla" src="assets/img/logo-mozilla-white.svg" alt="Mozilla" title="Mozilla"></a>
           </p>
 
           <p>
@@ -355,5 +375,6 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/ga.js"></script>
   </body>
 </html>

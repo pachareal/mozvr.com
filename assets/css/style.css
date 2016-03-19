@@ -163,8 +163,12 @@ html {
 }
 
 body {
-  font: 300 1rem/1.2 "Fira Sans", sans-serif;
+  font: 300 1rem/1.2 Helvetica Neue, Helvetica, san-serif;
   line-height: 1.5rem;
+}
+
+.fonts-loaded body {
+  font-family: Fira Sans, sans-serif;
 }
 
 h1, h2, h3, h4 {
@@ -372,7 +376,7 @@ li {
 /*
 Navigation
 */
-.isMobile nav {
+[data-supports-mobile="true"] nav {
   display: none;
 }
 
@@ -465,7 +469,7 @@ Top intro section
   left: 0;
 }
 
-.isMobile .hero--iframe {
+[data-supports-mobile="true"] .hero--iframe {
   display: none;
 }
 
@@ -487,8 +491,6 @@ Top intro section
 }
 
 .headline {
-  background: rgba(0,0,0,.5);
-  box-shadow: -3px 3px 0 0 rgba(0,0,0,.15);
   font-size: 1.2rem;
   color: #fff;
   max-width: 35rem;
@@ -501,7 +503,7 @@ Top intro section
 /*
 Getting Started
 */
-.vr .section--start {
+[data-supports-vr="true"] .section--start {
   order: 2;
 }
 
@@ -542,7 +544,7 @@ Getting Started
 /*
 Showcase
 */
-.isMobile .desktop {
+[data-supports-mobile="true"] .desktop {
   display: none;
 }
 
@@ -555,16 +557,16 @@ Showcase
   display: none;
 }
 
-.novr .section--showcase h1 {
+[data-supports-vr="false"] .section--showcase h1 {
   display: block;
   color: #fff;
 }
 
-.novr .vrEnabled {
+[data-supports-vr="false"] .vrEnabled {
   display: none;
 }
 
-.vr .section--showcase .vrEnabled {
+[data-supports-vr="true"] .section--showcase .vrEnabled {
   display: block;
 }
 
@@ -613,11 +615,11 @@ Showcase
   width: 100%;
 }
 
-.lacks-touch .showcase__image {
+[data-supports-touch="false"] .showcase__image {
   opacity: 0.85;
 }
 
-.lacks-touch .showcase__image:hover {
+[data-supports-touch="false"] .showcase__image:hover {
   opacity: 1;
 }
 
@@ -782,6 +784,20 @@ a.link--license:hover {
   color: #86d6f8;
 }
 
+.link--blog {
+  display: none;
+}
+
+/* Hide WebVR pages that haven't been updated for the new API. */
+[data-supports-vr="false"][data-supports-vr-legacy="true"] [data-showcase-slug="waytogo"],
+[data-supports-vr="false"][data-supports-vr-legacy="true"] [data-showcase-slug="inspirit"],
+[data-supports-vr="false"][data-supports-vr-legacy="true"] [data-showcase-slug="livyatanim"],
+[data-supports-vr="false"][data-supports-vr-legacy="true"] [data-showcase-slug="monkeys"],
+[data-supports-vr="false"][data-supports-vr-legacy="true"] [data-showcase-slug="polarsea"],
+[data-supports-vr="false"][data-supports-vr-legacy="true"] [data-showcase-slug="rainbowmembrane"] {
+  display: none;
+}
+
 /*
 media queries
 */
@@ -792,6 +808,17 @@ media queries
   }
   .flex--grid--item {
     flex-basis: 50%;
+  }
+  .link--blog {
+    background: #e14164;
+    display: inline-block;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    margin: 0 auto 1.5rem;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    text-transform: uppercase;
   }
 }
 
